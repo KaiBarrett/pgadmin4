@@ -138,7 +138,7 @@ DESKTOP_USER = 'pgadmin4@pgadmin.org'
 # NOTE: This is NOT recommended for production use, only for debugging
 # or testing. Production installations should be run as a WSGI application
 # behind Apache HTTPD.
-DEFAULT_SERVER = 'localhost'
+DEFAULT_SERVER = 'https://kal-npr-eu2-pga-py.azurewebsites.net'
 
 # The default port on which the app server will listen if not set in the
 # environment by the runtime
@@ -209,7 +209,7 @@ if IS_WIN:
     )
 else:
     if SERVER_MODE:
-        DATA_DIR = '/mnt/c/Users/barrettk/projects/pgadmin4/workingdir'
+        DATA_DIR = 'pgadmin4/'
     else:
         DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))
 
@@ -235,8 +235,8 @@ DEBUG = True
 #   INFO     20
 #   DEBUG    10
 #   NOTSET    0
-CONSOLE_LOG_LEVEL = logging.DEBUG
-FILE_LOG_LEVEL = logging.DEBUG
+CONSOLE_LOG_LEVEL = logging.INFO
+FILE_LOG_LEVEL = logging.INFO
 
 # Log format.
 CONSOLE_LOG_FORMAT = '%(asctime)s: %(levelname)s\t%(name)s:\t%(message)s'
@@ -245,7 +245,7 @@ FILE_LOG_FORMAT = '%(asctime)s: %(levelname)s\t%(name)s:\t%(message)s'
 # Log file name. This goes in the data directory, except on non-Windows
 # platforms in server mode.
 if SERVER_MODE and not IS_WIN:
-    LOG_FILE = '/mnt/c/Users/barrettk/projects/pgadmin4/workingdir/pgadmin4.log'
+    LOG_FILE = 'pgadmin4.log'
 else:
     LOG_FILE = os.path.join(DATA_DIR, 'pgadmin4.log')
 
