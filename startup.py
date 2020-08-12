@@ -1,2 +1,2 @@
 # startup.py shim
-from web.pgAdmin4 import app
+from web.pgAdmin4 import main
