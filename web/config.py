@@ -209,7 +209,7 @@ if IS_WIN:
     )
 else:
     if SERVER_MODE:
-        DATA_DIR = 'pgadmin4/'
+        DATA_DIR = '/home/pgadmin4/'
     else:
         DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))
 
@@ -245,7 +245,7 @@ FILE_LOG_FORMAT = '%(asctime)s: %(levelname)s\t%(name)s:\t%(message)s'
 # Log file name. This goes in the data directory, except on non-Windows
 # platforms in server mode.
 if SERVER_MODE and not IS_WIN:
-    LOG_FILE = 'pgadmin4.log'
+    LOG_FILE = '/home/log/pgadmin4.log'
 else:
     LOG_FILE = os.path.join(DATA_DIR, 'pgadmin4.log')
 
